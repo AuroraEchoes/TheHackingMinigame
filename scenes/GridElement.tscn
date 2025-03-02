@@ -1,12 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqw88nq783s7u"]
+[gd_scene load_steps=7 format=3 uid="uid://dqw88nq783s7u"]
 
 [ext_resource type="FontFile" uid="uid://b1j7i4gf17fib" path="res://assets/font/IosevkaNerdFont-Heavy.ttf" id="1_6tled"]
-[ext_resource type="Script" path="res://scenes/GridElement.gd" id="2_7lfyx"]
+[ext_resource type="StyleBox" uid="uid://bwhnw5y0tjmtg" path="res://resources/styles/deactivated-lock-element.tres" id="2_4q8v8"]
+[ext_resource type="Script" path="res://scripts/GridElement.gd" id="2_7lfyx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ismq7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wh10h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t0pcp"]
 
 [node name="GridElement" type="Button"]
 custom_minimum_size = Vector2(112, 112)
 tooltip_text = "Empty"
 theme_override_fonts/font = ExtResource("1_6tled")
 theme_override_font_sizes/font_size = 64
-text = "05"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ismq7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wh10h")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_t0pcp")
+theme_override_styles/normal = ExtResource("2_4q8v8")
+text = "64"
 script = ExtResource("2_7lfyx")

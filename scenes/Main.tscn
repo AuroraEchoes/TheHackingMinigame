@@ -1,34 +1,178 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjcxcmewfmcap"]
+[gd_scene load_steps=12 format=3 uid="uid://bjcxcmewfmcap"]
 
+[ext_resource type="Shader" path="res://resources/shader/crt_shader.gdshader" id="1_37yor"]
 [ext_resource type="Script" path="res://scripts/GenerateGrid.gd" id="1_fo8hp"]
 [ext_resource type="FontFile" uid="uid://b1j7i4gf17fib" path="res://assets/font/IosevkaNerdFont-Heavy.ttf" id="2_5gekr"]
+[ext_resource type="Script" path="res://scripts/CounterhackBar.gd" id="2_7r33w"]
+[ext_resource type="Script" path="res://scripts/SelectOperation.gd" id="2_pu54o"]
+[ext_resource type="Script" path="res://resources/LevelResource.gd" id="4_m2oaj"]
+[ext_resource type="Script" path="res://scripts/GoalText.gd" id="6_m3unn"]
 
-[node name="Root" type="Node2D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x728f"]
+shader = ExtResource("1_37yor")
+shader_parameter/line_width = 0.01
+shader_parameter/overlay_color = Color(0.160784, 0.231373, 0.164706, 1)
+shader_parameter/mix_amount = 0.0
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruvwy"]
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wajtx"]
+bg_color = Color(0.692131, 0.0979061, 0.198748, 1)
+
+[sub_resource type="Resource" id="Resource_406ai"]
+script = ExtResource("4_m2oaj")
+grid_size = Vector2i(6, 6)
+counterhack_moves = 10
+goal = 0
+goal_position = Vector2i(5, 5)
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_x728f")
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 1140.0
+offset_bottom = 636.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="CounterhackTitle" type="Label" parent="HBoxContainer/Content"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5gekr")
+text = "Antivirus Counterhack Progress"
+
+[node name="CounterhackProgress" type="ProgressBar" parent="HBoxContainer/Content" node_paths=PackedStringArray("moves_label")]
+custom_minimum_size = Vector2(0, 25.575)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_ruvwy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wajtx")
+show_percentage = false
+script = ExtResource("2_7r33w")
+moves_label = NodePath("CounterhackRemaining")
+
+[node name="CounterhackRemaining" type="Label" parent="HBoxContainer/Content/CounterhackProgress"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5gekr")
+text = "n moves"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/Content"]
 layout_mode = 2
 columns = 4
 script = ExtResource("1_fo8hp")
-screen_size = null
+level = SubResource("Resource_406ai")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Operations" type="HBoxContainer" parent="HBoxContainer/Content" node_paths=PackedStringArray("add", "sub")]
 layout_mode = 2
 theme_override_constants/separation = 16
+script = ExtResource("2_pu54o")
+add = NodePath("Add")
+sub = NodePath("Sub")
 
-[node name="Add" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Add" type="Button" parent="HBoxContainer/Content/Operations"]
 custom_minimum_size = Vector2(112, 112)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_5gekr")
 theme_override_font_sizes/font_size = 64
 text = "ADD"
 
-[node name="Sub" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Sub" type="Button" parent="HBoxContainer/Content/Operations"]
 custom_minimum_size = Vector2(112, 112)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_5gekr")
 theme_override_font_sizes/font_size = 64
 text = "SUB"
+
+[node name="SideOpts" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Goal" type="Label" parent="HBoxContainer/SideOpts"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5gekr")
+theme_override_font_sizes/font_size = 24
+text = "Goal: Beat the snuphalupagus"
+script = ExtResource("6_m3unn")
+
+[node name="Restart" type="Button" parent="HBoxContainer/SideOpts"]
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_5gekr")
+theme_override_font_sizes/font_size = 64
+text = "RESTART"
+
+[node name="YouWin" type="Label" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.847059, 0.819608, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("2_5gekr")
+theme_override_font_sizes/font_size = 181
+text = "You Win!"
+
+[node name="YouLose" type="Label" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.847059, 0.137255, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("2_5gekr")
+theme_override_font_sizes/font_size = 181
+text = "You Lose!"

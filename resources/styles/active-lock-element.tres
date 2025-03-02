@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://byh5oypx703lu"]
+
+[ext_resource type="Texture2D" uid="uid://6lsou8h2tfr3" path="res://assets/element-skins/active-lock.png" id="1_x1kpg"]
+
+[resource]
+texture = ExtResource("1_x1kpg")
