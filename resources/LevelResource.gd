@@ -5,6 +5,8 @@ class_name LevelResource
 @export var counterhack_moves: int
 @export var goal: Goal
 @export var goal_position: Vector2i
+@export var restart_criteria: Array[GainRestart]
+@export var hack_reduction_per_restart: int
 
 enum Goal {
 	UnlockTile
