@@ -37,7 +37,7 @@ goal = 0
 goal_position = Vector2i(7, 5)
 restart_criteria = Array[ExtResource("5_412cm")]([SubResource("Resource_jf5xe"), SubResource("Resource_1btgn")])
 hack_reduction_per_restart = 0
-seed = 6
+level_seed = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m6r4s"]
 shader = ExtResource("1_37yor")

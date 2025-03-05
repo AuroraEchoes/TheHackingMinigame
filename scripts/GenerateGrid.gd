@@ -24,7 +24,7 @@ func _ready() -> void:
 	Global.select_operation.connect(func(op: SelectOperation.Operation): selected_operation = op)
 
 func load_level():
-	seed(level.seed)
+	seed(level.level_seed)
 	var goal_text: String
 	match level.goal:
 		LevelResource.Goal.UnlockTile:
@@ -136,6 +136,6 @@ func set_next_restart():
 		restart_criteria = level.restart_criteria.front()
 		level.restart_criteria.pop_front()
 		Global.update_restart_criteria.emit(restart_criteria)
-	elif restart_criteria.goal != GainRestart.RestartCriteria.NoMoreAvailable:
-		restart_criteria.goal = GainRestart.RestartCriteria.NoMoreAvailable
+	elif restart_criteria.restart_criteria != GainRestart.RestartCriteria.NoMoreAvailable:
+		restart_criteria.restart_criteria = GainRestart.RestartCriteria.NoMoreAvailable
 		Global.update_restart_criteria.emit(restart_criteria)
