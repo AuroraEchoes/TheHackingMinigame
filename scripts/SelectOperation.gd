@@ -32,6 +32,7 @@ func on_button_press(button: String) -> void:
 		"-":
 			selected_operation = Operation.Subtract
 			sub.add_theme_stylebox_override("normal", selected_stylebox)
+	Global.select_operation.emit(selected_operation)
 
 func get_operation() -> Operation:
 	return self.selected_operation

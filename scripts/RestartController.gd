@@ -1,7 +1,7 @@
 extends VBoxContainer
 
 @export var restart_button: Button
-@export var criteria_label: Label
+@export var criteria_label: RichTextLabel
 
 func _enter_tree() -> void:
     Global.update_restart_criteria.connect(update_restart_criteria)
