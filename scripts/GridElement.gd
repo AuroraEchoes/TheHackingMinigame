@@ -91,11 +91,9 @@ func spawn_overflow() -> void:
 func spawn_undeflow() -> void:
 	spawn_overflow_or_underflow("Underflow!")
 
-
 func spawn_overflow_or_underflow(label_text: String) -> void:
 	var overflow: Label = overflow_underflow.instantiate()
 	overflow.text = label_text
-	print("Global position: " + str(global_position))
 	var transparent = modulate
 	transparent.a = 0
 	var opaque = modulate

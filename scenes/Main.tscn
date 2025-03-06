@@ -1,65 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://bjcxcmewfmcap"]
+[gd_scene load_steps=6 format=3 uid="uid://4lnyh0akq61l"]
 
-[ext_resource type="Script" path="res://scripts/Desktop.gd" id="1_2ufhy"]
+[ext_resource type="Script" path="res://scripts/SceneManager.gd" id="1_4kn87"]
 [ext_resource type="Shader" path="res://resources/shader/crt_shader.gdshader" id="1_37yor"]
-[ext_resource type="Script" path="res://scripts/GenerateGrid.gd" id="1_fo8hp"]
-[ext_resource type="FontFile" uid="uid://b1j7i4gf17fib" path="res://assets/font/IosevkaNerdFont-Heavy.ttf" id="2_5gekr"]
-[ext_resource type="Script" path="res://scripts/CounterhackBar.gd" id="2_7r33w"]
-[ext_resource type="Script" path="res://scripts/SelectOperation.gd" id="2_pu54o"]
-[ext_resource type="Script" path="res://scripts/GainRestart.gd" id="5_412cm"]
-[ext_resource type="Script" path="res://resources/LevelResource.gd" id="5_qh4ar"]
-[ext_resource type="Script" path="res://scripts/GoalText.gd" id="6_m3unn"]
-[ext_resource type="Script" path="res://scripts/RestartController.gd" id="8_gdu34"]
-[ext_resource type="Script" path="res://scripts/RestartButton.gd" id="10_x6nri"]
 [ext_resource type="PackedScene" uid="uid://dxtxve0kevfdw" path="res://scenes/AudioManager.tscn" id="11_4gjpi"]
 [ext_resource type="Script" path="res://scripts/ShaderOverlay.gd" id="12_vm5sk"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruvwy"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wajtx"]
-bg_color = Color(0.692131, 0.0979061, 0.198748, 1)
-
-[sub_resource type="Resource" id="Resource_l8y6c"]
-script = ExtResource("5_412cm")
-restart_criteria = 0
-restart_number = 3
-
-[sub_resource type="Resource" id="Resource_02b5r"]
-script = ExtResource("5_412cm")
-restart_criteria = 1
-restart_number = 2
-
-[sub_resource type="Resource" id="Resource_sd2wi"]
-script = ExtResource("5_412cm")
-restart_criteria = 2
-restart_number = 3
-
-[sub_resource type="Resource" id="Resource_mcuip"]
-script = ExtResource("5_qh4ar")
-grid_size = Vector2i(5, 5)
-counterhack_moves = 10
-goal = 0
-goal_position = Vector2i(4, 4)
-restart_criteria = Array[ExtResource("5_412cm")]([SubResource("Resource_l8y6c"), SubResource("Resource_02b5r"), SubResource("Resource_sd2wi")])
-hack_reduction_per_restart = 2
-level_seed = 0
-
-[sub_resource type="Resource" id="Resource_osxyo"]
-script = ExtResource("5_412cm")
-restart_criteria = 2
-restart_number = 3
-
-[sub_resource type="Resource" id="Resource_fbr0y"]
-script = ExtResource("5_qh4ar")
-grid_size = Vector2i(3, 3)
-counterhack_moves = 5
-goal = 0
-goal_position = Vector2i(0, 0)
-restart_criteria = Array[ExtResource("5_412cm")]([SubResource("Resource_osxyo")])
-hack_reduction_per_restart = 0
-level_seed = 0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m6r4s"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_joeq0"]
 shader = ExtResource("1_37yor")
 shader_parameter/fisheye_amount = 0.954
 shader_parameter/blur_strength = 0.44
@@ -77,184 +23,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Background" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.151276, 0.151276, 0.151276, 1)
-script = ExtResource("1_2ufhy")
-
-[node name="MarginContainer" type="MarginContainer" parent="Background"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 64
-theme_override_constants/margin_right = 64
-theme_override_constants/margin_bottom = 64
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 32
-
-[node name="Content" type="VBoxContainer" parent="Background/MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="CounterhackTitle" type="Label" parent="Background/MarginContainer/HBoxContainer/Content"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5gekr")
-theme_override_font_sizes/font_size = 24
-text = "Antivirus Counterhack Progress"
-
-[node name="CounterhackProgress" type="ProgressBar" parent="Background/MarginContainer/HBoxContainer/Content" node_paths=PackedStringArray("moves_label")]
-custom_minimum_size = Vector2(0, 25.575)
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_styles/background = SubResource("StyleBoxFlat_ruvwy")
-theme_override_styles/fill = SubResource("StyleBoxFlat_wajtx")
-show_percentage = false
-script = ExtResource("2_7r33w")
-moves_label = NodePath("CounterhackRemaining")
-
-[node name="CounterhackRemaining" type="Label" parent="Background/MarginContainer/HBoxContainer/Content/CounterhackProgress"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_5gekr")
-text = "n moves"
-horizontal_alignment = 1
-
-[node name="GridContainer" type="GridContainer" parent="Background/MarginContainer/HBoxContainer/Content"]
-layout_mode = 2
-columns = 4
-script = ExtResource("1_fo8hp")
-levels = Array[ExtResource("5_qh4ar")]([SubResource("Resource_mcuip"), SubResource("Resource_fbr0y")])
-level_area_px = Vector2i(700, 700)
-
-[node name="Sidebar" type="VBoxContainer" parent="Background/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(280, 0)
-layout_mode = 2
-size_flags_horizontal = 8
-
-[node name="Goal" type="RichTextLabel" parent="Background/MarginContainer/HBoxContainer/Sidebar"]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_5gekr")
-theme_override_font_sizes/normal_font_size = 24
-text = "Goal: Beat the snuphalupagus"
-fit_content = true
-script = ExtResource("6_m3unn")
-
-[node name="Div1" type="MarginContainer" parent="Background/MarginContainer/HBoxContainer/Sidebar"]
-layout_mode = 2
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 48
-theme_override_constants/margin_bottom = 16
-
-[node name="Area" type="ColorRect" parent="Background/MarginContainer/HBoxContainer/Sidebar/Div1"]
-custom_minimum_size = Vector2(10, 3)
-layout_mode = 2
-color = Color(0.429529, 0.462038, 0.446644, 1)
-
-[node name="Restart" type="VBoxContainer" parent="Background/MarginContainer/HBoxContainer/Sidebar" node_paths=PackedStringArray("restart_button", "criteria_label")]
-layout_mode = 2
-script = ExtResource("8_gdu34")
-restart_button = NodePath("RestartButton")
-criteria_label = NodePath("RestartCriteria")
-
-[node name="RestartCriteria" type="RichTextLabel" parent="Background/MarginContainer/HBoxContainer/Sidebar/Restart"]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_5gekr")
-theme_override_font_sizes/normal_font_size = 24
-text = "Unlock Restart: ?"
-fit_content = true
-
-[node name="RestartButton" type="Button" parent="Background/MarginContainer/HBoxContainer/Sidebar/Restart"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("2_5gekr")
-theme_override_font_sizes/font_size = 24
-text = " RESTART"
-script = ExtResource("10_x6nri")
-
-[node name="Div2" type="MarginContainer" parent="Background/MarginContainer/HBoxContainer/Sidebar"]
-layout_mode = 2
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 48
-theme_override_constants/margin_bottom = 16
-
-[node name="Area" type="ColorRect" parent="Background/MarginContainer/HBoxContainer/Sidebar/Div2"]
-custom_minimum_size = Vector2(10, 3)
-layout_mode = 2
-color = Color(0.429529, 0.462038, 0.446644, 1)
-
-[node name="Operations" type="HBoxContainer" parent="Background/MarginContainer/HBoxContainer/Sidebar" node_paths=PackedStringArray("add", "sub")]
-layout_mode = 2
-theme_override_constants/separation = 16
-script = ExtResource("2_pu54o")
-add = NodePath("Add")
-sub = NodePath("Sub")
-
-[node name="Add" type="Button" parent="Background/MarginContainer/HBoxContainer/Sidebar/Operations"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5gekr")
-theme_override_font_sizes/font_size = 32
-text = "ADD"
-
-[node name="Sub" type="Button" parent="Background/MarginContainer/HBoxContainer/Sidebar/Operations"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5gekr")
-theme_override_font_sizes/font_size = 32
-text = "SUB"
-
-[node name="YouWin" type="Label" parent="Background/MarginContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.847059, 0.819608, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("2_5gekr")
-theme_override_font_sizes/font_size = 181
-text = "You Win!"
-
-[node name="YouLose" type="Label" parent="Background/MarginContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.847059, 0.137255, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("2_5gekr")
-theme_override_font_sizes/font_size = 181
-text = "You Lose!"
+script = ExtResource("1_4kn87")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ShaderOverlay" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_m6r4s")
+material = SubResource("ShaderMaterial_joeq0")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -262,5 +36,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("12_vm5sk")
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioManager" parent="." instance=ExtResource("11_4gjpi")]
