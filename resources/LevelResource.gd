@@ -12,6 +12,7 @@ class_name LevelResource
 @export var restart_criteria: Array[GainRestart]
 @export var hack_reduction_per_restart: int
 @export var level_seed: int
+@export var tutorial: bool
 
 enum Goal {
 	UnlockTile,
