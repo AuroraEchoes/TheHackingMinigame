@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bjcxcmewfmcap"]
+[gd_scene load_steps=21 format=3 uid="uid://bjcxcmewfmcap"]
 
 [ext_resource type="Script" path="res://scripts/Desktop.gd" id="1_2ufhy"]
 [ext_resource type="Script" path="res://scripts/GenerateGrid.gd" id="1_fo8hp"]
+[ext_resource type="Script" path="res://scripts/LevelManager.gd" id="1_mirpc"]
 [ext_resource type="FontFile" uid="uid://b1j7i4gf17fib" path="res://assets/font/IosevkaNerdFont-Heavy.ttf" id="2_5gekr"]
 [ext_resource type="Script" path="res://scripts/CounterhackBar.gd" id="2_7r33w"]
 [ext_resource type="Script" path="res://scripts/SelectOperation.gd" id="2_pu54o"]
@@ -11,58 +12,74 @@
 [ext_resource type="Script" path="res://scripts/RestartController.gd" id="8_gdu34"]
 [ext_resource type="Script" path="res://scripts/RestartButton.gd" id="10_x6nri"]
 
+[sub_resource type="Resource" id="Resource_l2pi5"]
+script = ExtResource("5_412cm")
+restart_criteria = 0
+restart_number = 2
+
+[sub_resource type="Resource" id="Resource_d2wun"]
+script = ExtResource("5_412cm")
+restart_criteria = 1
+restart_number = 2
+
+[sub_resource type="Resource" id="Resource_t7ttq"]
+script = ExtResource("5_qh4ar")
+grid_size = Vector2i(4, 4)
+counterhack_moves = 20
+goal = 0
+unlock_tile_position = Vector2i(0, 0)
+points_to_equalise = Array[Vector2i]([])
+selected_row_or_col = Vector2i(0, 0)
+sum_of_selected_row_col = 0
+all_odd_in_selected_row_col = false
+restart_criteria = Array[ExtResource("5_412cm")]([SubResource("Resource_l2pi5"), SubResource("Resource_d2wun")])
+hack_reduction_per_restart = 2
+level_seed = 2
+
+[sub_resource type="Resource" id="Resource_utvef"]
+script = ExtResource("5_412cm")
+restart_criteria = 0
+restart_number = 3
+
+[sub_resource type="Resource" id="Resource_thp3k"]
+script = ExtResource("5_412cm")
+restart_criteria = 0
+restart_number = 3
+
+[sub_resource type="Resource" id="Resource_p5krv"]
+script = ExtResource("5_412cm")
+restart_criteria = 0
+restart_number = 3
+
+[sub_resource type="Resource" id="Resource_3c1xd"]
+script = ExtResource("5_qh4ar")
+grid_size = Vector2i(6, 6)
+counterhack_moves = 20
+goal = 2
+unlock_tile_position = Vector2i(0, 0)
+points_to_equalise = Array[Vector2i]([])
+selected_row_or_col = Vector2i(3, 0)
+sum_of_selected_row_col = 64
+all_odd_in_selected_row_col = false
+restart_criteria = Array[ExtResource("5_412cm")]([SubResource("Resource_utvef"), SubResource("Resource_thp3k"), SubResource("Resource_p5krv")])
+hack_reduction_per_restart = 0
+level_seed = 0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruvwy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wajtx"]
 bg_color = Color(0.692131, 0.0979061, 0.198748, 1)
 
-[sub_resource type="Resource" id="Resource_l8y6c"]
-script = ExtResource("5_412cm")
-restart_criteria = 0
-restart_number = 3
-
-[sub_resource type="Resource" id="Resource_02b5r"]
-script = ExtResource("5_412cm")
-restart_criteria = 1
-restart_number = 2
-
-[sub_resource type="Resource" id="Resource_sd2wi"]
-script = ExtResource("5_412cm")
-restart_criteria = 2
-restart_number = 3
-
-[sub_resource type="Resource" id="Resource_mcuip"]
-script = ExtResource("5_qh4ar")
-grid_size = Vector2i(5, 5)
-counterhack_moves = 10
-goal = 0
-goal_position = Vector2i(4, 4)
-restart_criteria = Array[ExtResource("5_412cm")]([SubResource("Resource_l8y6c"), SubResource("Resource_02b5r"), SubResource("Resource_sd2wi")])
-hack_reduction_per_restart = 2
-level_seed = 0
-
-[sub_resource type="Resource" id="Resource_osxyo"]
-script = ExtResource("5_412cm")
-restart_criteria = 2
-restart_number = 3
-
-[sub_resource type="Resource" id="Resource_fbr0y"]
-script = ExtResource("5_qh4ar")
-grid_size = Vector2i(3, 3)
-counterhack_moves = 5
-goal = 0
-goal_position = Vector2i(0, 0)
-restart_criteria = Array[ExtResource("5_412cm")]([SubResource("Resource_osxyo")])
-hack_reduction_per_restart = 0
-level_seed = 0
-
-[node name="Root" type="Control"]
+[node name="Root" type="Control" node_paths=PackedStringArray("generate_grid")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mirpc")
+levels = Array[ExtResource("5_qh4ar")]([SubResource("Resource_t7ttq"), SubResource("Resource_3c1xd"), null, null, null])
+generate_grid = NodePath("Background/MarginContainer/HBoxContainer/Content/GridContainer")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -130,7 +147,6 @@ horizontal_alignment = 1
 layout_mode = 2
 columns = 4
 script = ExtResource("1_fo8hp")
-levels = Array[ExtResource("5_qh4ar")]([SubResource("Resource_mcuip"), SubResource("Resource_fbr0y")])
 level_area_px = Vector2i(700, 700)
 
 [node name="Sidebar" type="VBoxContainer" parent="Background/MarginContainer/HBoxContainer"]

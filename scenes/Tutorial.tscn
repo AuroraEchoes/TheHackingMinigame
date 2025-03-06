@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://byoog7m6fb7la"]
+
+[ext_resource type="Script" path="res://scripts/Notification.gd" id="1_0nxx4"]
+[ext_resource type="FontFile" uid="uid://b1j7i4gf17fib" path="res://assets/font/IosevkaNerdFont-Heavy.ttf" id="2_bwi2t"]
+[ext_resource type="Texture2D" uid="uid://dqdwhllu5amq5" path="res://assets/tutorial-penny.png" id="2_queof"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sa4c"]
+bg_color = Color(0.625597, 0.625597, 0.625597, 1)
+
+[node name="Notification" type="PanelContainer" node_paths=PackedStringArray("label")]
+offset_right = 248.0
+offset_bottom = 37.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1sa4c")
+script = ExtResource("1_0nxx4")
+label = NodePath("MarginContainer/HBoxContainer/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Penny" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_queof")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bwi2t")
+theme_override_font_sizes/font_size = 32
+text = "Hey-hey-hi! I’m Penny, your digital
+hacking assistant."

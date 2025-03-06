@@ -1,4 +1,4 @@
-extends Label
+extends Button
 
 # i am going to hell for this
 # but…
@@ -12,9 +12,4 @@ extends Label
 @export var level_to_load: int
 
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	pressed.connect(func(): Global.load_level.emit(level_to_load))
