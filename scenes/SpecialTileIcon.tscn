@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://vd4ywysp12b7"]
+
+[ext_resource type="FontFile" uid="uid://b1j7i4gf17fib" path="res://assets/font/IosevkaNerdFont-Heavy.ttf" id="1_odjct"]
+
+[node name="SpecialTileIcon" type="Label"]
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.815686, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_odjct")
+theme_override_font_sizes/font_size = 32
+text = "󰌾"

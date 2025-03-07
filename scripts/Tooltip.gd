@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func setup(selected_tile: GridElement, hovered_tile: GridElement, operation: SelectOperation.Operation, restart_goal: GainRestart):
     # tutorialling
-    if operation == null:
+    if operation == SelectOperation.Operation.Noop:
         label.text = "Select an operation!"
     # no selected tile, just hovering over one
     elif selected_tile == null:
@@ -40,3 +40,6 @@ func setup(selected_tile: GridElement, hovered_tile: GridElement, operation: Sel
             label.text += "\n󰄬 Is a power of 2"
         if GainRestart.is_multiple_of_three(result) and restart_goal.restart_criteria == GainRestart.RestartCriteria.MultiplesOfThree:
             label.text += "\n󰄬 Is a multiple of 3"
+    var feature: String = hovered_tile.get_special_feature_tooltip()
+    if feature != "":
+        label.text += "\n" + feature
