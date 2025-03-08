@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkqygnrkmskfj"]
 
-[ext_resource type="Script" path="res://scripts/Notification.gd" id="1_ieuxc"]
+[ext_resource type="Script" uid="uid://dk1pkdsitnxij" path="res://scripts/Notification.gd" id="1_ieuxc"]
 [ext_resource type="FontFile" uid="uid://b1j7i4gf17fib" path="res://assets/font/IosevkaNerdFont-Heavy.ttf" id="2_re11e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sa4c"]
@@ -9,6 +9,7 @@ shadow_size = 2
 shadow_offset = Vector2(-3, 3)
 
 [node name="Notification" type="PanelContainer" node_paths=PackedStringArray("label")]
+z_index = 4
 offset_right = 248.0
 offset_bottom = 37.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_1sa4c")

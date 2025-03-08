@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="PlaymakersRestart"
-run/main_scene="res://scenes/Main.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+run/main_scene="uid://4lnyh0akq61l"
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://assets/hacking-minigame-icon.png"
 
 [autoload]
@@ -26,6 +26,8 @@ gdscript/warnings/unused_signal=0
 [display]
 
 window/size/viewport_height=864
+window/size/resizable=false
+window/stretch/mode="canvas_items"
 
 [dotnet]
 

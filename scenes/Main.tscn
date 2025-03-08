@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://4lnyh0akq61l"]
 
-[ext_resource type="Script" path="res://scripts/SceneManager.gd" id="1_4kn87"]
-[ext_resource type="Shader" path="res://resources/shader/crt_shader.gdshader" id="1_37yor"]
+[ext_resource type="Script" uid="uid://b6ma757rk8qt" path="res://scripts/SceneManager.gd" id="1_4kn87"]
+[ext_resource type="Shader" uid="uid://b4nx4rvh71jfo" path="res://resources/shader/crt_shader.gdshader" id="1_37yor"]
 [ext_resource type="PackedScene" uid="uid://dxtxve0kevfdw" path="res://scenes/AudioManager.tscn" id="11_4gjpi"]
-[ext_resource type="Script" path="res://scripts/ShaderOverlay.gd" id="12_vm5sk"]
+[ext_resource type="Script" uid="uid://bt6hrcn7p6igb" path="res://scripts/ShaderOverlay.gd" id="12_vm5sk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_joeq0"]
 shader = ExtResource("1_37yor")
@@ -15,6 +15,7 @@ shader_parameter/scanline_width = 1.2
 shader_parameter/noise_darkness = 0.2
 shader_parameter/pixel_ratio = 1.5
 shader_parameter/shutdown_amount = 0.0
+shader_parameter/noise_amount = 0.0
 
 [node name="Root" type="Control"]
 layout_mode = 3

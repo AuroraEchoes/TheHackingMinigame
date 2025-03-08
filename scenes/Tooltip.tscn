@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cmkljw4xvpgr6"]
 
-[ext_resource type="Script" path="res://scripts/Tooltip.gd" id="1_ut8lu"]
+[ext_resource type="Script" uid="uid://bcw3saaytwkbq" path="res://scripts/Tooltip.gd" id="1_ut8lu"]
 [ext_resource type="FontFile" uid="uid://b1j7i4gf17fib" path="res://assets/font/IosevkaNerdFont-Heavy.ttf" id="2_umt6w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sa4c"]

@@ -23,6 +23,7 @@ func _ready() -> void:
 	sub.pressed.connect(func(): on_button_press("-"))
 
 func on_button_press(button: String) -> void:
+	Global.play_sound_event.emit(AudioManager.SoundEffect.KeyboardClick)
 	add.add_theme_stylebox_override("normal", unselected_stylebox)
 	sub.add_theme_stylebox_override("normal", unselected_stylebox)
 	match button:

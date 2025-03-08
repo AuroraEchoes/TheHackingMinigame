@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=6 format=3 uid="uid://br71hv2nmhyoi"]
+
+[ext_resource type="Script" uid="uid://cv2crheljtq6v" path="res://scripts/GainRestart.gd" id="1_csjnh"]
+[ext_resource type="Script" uid="uid://i2jh0nbjlkyp" path="res://resources/LevelResource.gd" id="2_fkmf1"]
+
+[sub_resource type="Resource" id="Resource_40jy2"]
+script = ExtResource("1_csjnh")
+restart_criteria = 2
+restart_number = 5
+metadata/_custom_type_script = "uid://cv2crheljtq6v"
+
+[sub_resource type="Resource" id="Resource_0akr6"]
+script = ExtResource("1_csjnh")
+restart_criteria = 1
+restart_number = 5
+metadata/_custom_type_script = "uid://cv2crheljtq6v"
+
+[sub_resource type="Resource" id="Resource_u2nc6"]
+script = ExtResource("1_csjnh")
+restart_criteria = 2
+restart_number = 7
+metadata/_custom_type_script = "uid://cv2crheljtq6v"
+
+[resource]
+script = ExtResource("2_fkmf1")
+grid_size = Vector2i(11, 11)
+counterhack_moves = 8
+goal = 3
+unlock_tile_position = Vector2i(0, 0)
+points_to_equalise = Array[Vector2i]([])
+selected_row_or_col = Vector2i(0, 5)
+sum_of_selected_row_col = 0
+all_odd_in_selected_row_col = false
+restart_criteria = Array[ExtResource("1_csjnh")]([SubResource("Resource_40jy2"), SubResource("Resource_0akr6"), SubResource("Resource_u2nc6")])
+hack_reduction_per_restart = 0
+level_seed = 0
+tutorial = false
+metadata/_custom_type_script = "uid://i2jh0nbjlkyp"

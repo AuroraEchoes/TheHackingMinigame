@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://b1j7i4gf17fib" path="res://assets/font/IosevkaNerdFont-Heavy.ttf" id="1_6tled"]
 [ext_resource type="StyleBox" uid="uid://bwhnw5y0tjmtg" path="res://resources/styles/deactivated-lock-element.tres" id="2_4q8v8"]
-[ext_resource type="Script" path="res://scripts/GridElement.gd" id="2_7lfyx"]
+[ext_resource type="Script" uid="uid://b4beuityr3tpq" path="res://scripts/GridElement.gd" id="2_7lfyx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ismq7"]
 

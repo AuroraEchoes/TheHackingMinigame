@@ -12,4 +12,8 @@ extends Button
 @export var level_to_load: int
 
 func _ready() -> void:
-	pressed.connect(func(): Global.load_level.emit(level_to_load))
+	pressed.connect(func():
+		Global.play_sound_event.emit(AudioManager.SoundEffect.KeyboardClick)
+		Global.load_level.emit(level_to_load))
+	if Global.completed_levels.has(level_to_load):
+		text = "󰄬 " + text.substr(0, 10) + text.substr(12)

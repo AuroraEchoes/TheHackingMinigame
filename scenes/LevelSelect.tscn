@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cq475g6weggf6"]
 
 [ext_resource type="FontFile" uid="uid://b1j7i4gf17fib" path="res://assets/font/IosevkaNerdFont-Heavy.ttf" id="1_pl1uv"]
-[ext_resource type="Script" path="res://scripts/LevelSelectText.gd" id="2_33e5p"]
+[ext_resource type="Script" uid="uid://bbwa1k5xkct51" path="res://scripts/LevelSelectText.gd" id="2_33e5p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_01a52"]
 
@@ -47,13 +47,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -64,10 +66,15 @@ theme_override_fonts/font = ExtResource("1_pl1uv")
 theme_override_font_sizes/font_size = 64
 text = "Level Select"
 
+[node name="Divider1" type="Control" parent="ColorRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
 [node name="ItemList" type="ScrollContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 600)
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 size_flags_horizontal = 4
+vertical_scroll_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer/ItemList"]
 layout_mode = 2
@@ -93,6 +100,7 @@ level_to_load = 1
 
 [node name="Level1" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/ItemList/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
 theme_override_fonts/font = ExtResource("1_pl1uv")
 theme_override_font_sizes/font_size = 24
@@ -202,5 +210,281 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_bj1pl")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_34vcb")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_40ouu")
 text = "Level 6 ............  "
+script = ExtResource("2_33e5p")
+level_to_load = 7
+
+[node name="Level7" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/ItemList/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
+theme_override_fonts/font = ExtResource("1_pl1uv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01a52")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0jxnb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_typ56")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5fnmi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwauj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vnst3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ag5yh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bj1pl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_34vcb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_40ouu")
+text = "Level 7 ............  "
+script = ExtResource("2_33e5p")
+level_to_load = 8
+
+[node name="Level8" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/ItemList/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
+theme_override_fonts/font = ExtResource("1_pl1uv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01a52")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0jxnb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_typ56")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5fnmi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwauj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vnst3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ag5yh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bj1pl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_34vcb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_40ouu")
+text = "Level 8 ............  "
+script = ExtResource("2_33e5p")
+level_to_load = 9
+
+[node name="Level9" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/ItemList/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
+theme_override_fonts/font = ExtResource("1_pl1uv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01a52")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0jxnb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_typ56")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5fnmi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwauj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vnst3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ag5yh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bj1pl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_34vcb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_40ouu")
+text = "Level 9 ............  "
+script = ExtResource("2_33e5p")
+level_to_load = 10
+
+[node name="Level10" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/ItemList/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
+theme_override_fonts/font = ExtResource("1_pl1uv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01a52")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0jxnb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_typ56")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5fnmi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwauj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vnst3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ag5yh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bj1pl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_34vcb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_40ouu")
+text = "Level 10 ...........  "
+script = ExtResource("2_33e5p")
+level_to_load = 11
+
+[node name="Level11" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/ItemList/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
+theme_override_fonts/font = ExtResource("1_pl1uv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01a52")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0jxnb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_typ56")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5fnmi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwauj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vnst3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ag5yh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bj1pl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_34vcb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_40ouu")
+text = "Level 11 ...........  "
+script = ExtResource("2_33e5p")
+level_to_load = 12
+
+[node name="Level12" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/ItemList/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
+theme_override_fonts/font = ExtResource("1_pl1uv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01a52")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0jxnb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_typ56")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5fnmi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwauj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vnst3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ag5yh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bj1pl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_34vcb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_40ouu")
+text = "Level 12 ...........  "
+script = ExtResource("2_33e5p")
+level_to_load = 7
+
+[node name="Level13" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/ItemList/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
+theme_override_fonts/font = ExtResource("1_pl1uv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01a52")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0jxnb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_typ56")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5fnmi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwauj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vnst3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ag5yh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bj1pl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_34vcb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_40ouu")
+text = "Level 13 ...........  "
+script = ExtResource("2_33e5p")
+level_to_load = 7
+
+[node name="Level14" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/ItemList/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
+theme_override_fonts/font = ExtResource("1_pl1uv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01a52")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0jxnb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_typ56")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5fnmi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwauj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vnst3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ag5yh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bj1pl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_34vcb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_40ouu")
+text = "Level 14 ...........  "
+script = ExtResource("2_33e5p")
+level_to_load = 7
+
+[node name="Level15" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/ItemList/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
+theme_override_fonts/font = ExtResource("1_pl1uv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01a52")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0jxnb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_typ56")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5fnmi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwauj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vnst3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ag5yh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bj1pl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_34vcb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_40ouu")
+text = "Level 15 ...........  "
+script = ExtResource("2_33e5p")
+level_to_load = 7
+
+[node name="Level16" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/ItemList/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
+theme_override_fonts/font = ExtResource("1_pl1uv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01a52")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0jxnb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_typ56")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5fnmi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwauj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vnst3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ag5yh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bj1pl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_34vcb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_40ouu")
+text = "Level 16 ...........  "
+script = ExtResource("2_33e5p")
+level_to_load = 7
+
+[node name="Level17" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/ItemList/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
+theme_override_fonts/font = ExtResource("1_pl1uv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01a52")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0jxnb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_typ56")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5fnmi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwauj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vnst3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ag5yh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bj1pl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_34vcb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_40ouu")
+text = "Level 17 ...........  "
+script = ExtResource("2_33e5p")
+level_to_load = 7
+
+[node name="Level18" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/ItemList/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
+theme_override_fonts/font = ExtResource("1_pl1uv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01a52")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0jxnb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_typ56")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5fnmi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwauj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vnst3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ag5yh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bj1pl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_34vcb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_40ouu")
+text = "Level 18 ...........  "
+script = ExtResource("2_33e5p")
+level_to_load = 7
+
+[node name="Level19" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/ItemList/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
+theme_override_fonts/font = ExtResource("1_pl1uv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01a52")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0jxnb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_typ56")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5fnmi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwauj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vnst3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ag5yh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bj1pl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_34vcb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_40ouu")
+text = "Level 19 ...........  "
+script = ExtResource("2_33e5p")
+level_to_load = 7
+
+[node name="Level20" type="Button" parent="ColorRect/MarginContainer/VBoxContainer/ItemList/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.258824, 0.643137, 0.14902, 1)
+theme_override_fonts/font = ExtResource("1_pl1uv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_01a52")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0jxnb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_typ56")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_5fnmi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cwauj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_vnst3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ag5yh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bj1pl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_34vcb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_40ouu")
+text = "Level 20 ...........  "
 script = ExtResource("2_33e5p")
 level_to_load = 7

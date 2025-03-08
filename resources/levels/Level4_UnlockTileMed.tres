@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=6 format=3 uid="uid://ddfbs605xxpg6"]
+
+[ext_resource type="Script" uid="uid://cv2crheljtq6v" path="res://scripts/GainRestart.gd" id="1_sb82u"]
+[ext_resource type="Script" uid="uid://i2jh0nbjlkyp" path="res://resources/LevelResource.gd" id="2_cjewj"]
+
+[sub_resource type="Resource" id="Resource_xia6d"]
+script = ExtResource("1_sb82u")
+restart_criteria = 1
+restart_number = 4
+
+[sub_resource type="Resource" id="Resource_qabbg"]
+script = ExtResource("1_sb82u")
+restart_criteria = 2
+restart_number = 5
+
+[sub_resource type="Resource" id="Resource_y4jbc"]
+script = ExtResource("1_sb82u")
+restart_criteria = 0
+restart_number = 7
+
+[resource]
+script = ExtResource("2_cjewj")
+grid_size = Vector2i(5, 5)
+counterhack_moves = 6
+goal = 0
+unlock_tile_position = Vector2i(4, 4)
+points_to_equalise = Array[Vector2i]([])
+selected_row_or_col = Vector2i(0, 0)
+sum_of_selected_row_col = 0
+all_odd_in_selected_row_col = false
+restart_criteria = Array[ExtResource("1_sb82u")]([SubResource("Resource_xia6d"), SubResource("Resource_qabbg"), SubResource("Resource_y4jbc")])
+hack_reduction_per_restart = 0
+level_seed = 32
+tutorial = false

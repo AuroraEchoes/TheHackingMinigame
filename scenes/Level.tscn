@@ -1,116 +1,41 @@
-[gd_scene load_steps=25 format=3 uid="uid://bjcxcmewfmcap"]
+[gd_scene load_steps=29 format=3 uid="uid://bjcxcmewfmcap"]
 
-[ext_resource type="Script" path="res://scripts/Desktop.gd" id="1_2ufhy"]
-[ext_resource type="Script" path="res://scripts/GenerateGrid.gd" id="1_fo8hp"]
-[ext_resource type="Script" path="res://scripts/LevelManager.gd" id="1_mirpc"]
+[ext_resource type="Script" uid="uid://bqxyaiwf51vx4" path="res://scripts/Desktop.gd" id="1_2ufhy"]
+[ext_resource type="Script" uid="uid://c4nr2lovwwn4t" path="res://scripts/GenerateGrid.gd" id="1_fo8hp"]
+[ext_resource type="Script" uid="uid://bspqd74bp5jpm" path="res://scripts/LevelManager.gd" id="1_mirpc"]
 [ext_resource type="FontFile" uid="uid://b1j7i4gf17fib" path="res://assets/font/IosevkaNerdFont-Heavy.ttf" id="2_5gekr"]
-[ext_resource type="Script" path="res://scripts/CounterhackBar.gd" id="2_7r33w"]
-[ext_resource type="Script" path="res://scripts/SelectOperation.gd" id="2_pu54o"]
-[ext_resource type="Script" path="res://scripts/GainRestart.gd" id="5_412cm"]
-[ext_resource type="Script" path="res://resources/LevelResource.gd" id="5_qh4ar"]
-[ext_resource type="Script" path="res://scripts/GoalText.gd" id="6_m3unn"]
-[ext_resource type="Script" path="res://scripts/RestartController.gd" id="8_gdu34"]
-[ext_resource type="Script" path="res://scripts/RestartButton.gd" id="10_x6nri"]
-
-[sub_resource type="Resource" id="Resource_l2pi5"]
-script = ExtResource("5_412cm")
-restart_criteria = 0
-restart_number = 2
-
-[sub_resource type="Resource" id="Resource_d2wun"]
-script = ExtResource("5_412cm")
-restart_criteria = 1
-restart_number = 2
-
-[sub_resource type="Resource" id="Resource_t7ttq"]
-script = ExtResource("5_qh4ar")
-grid_size = Vector2i(4, 4)
-counterhack_moves = 20
-goal = 0
-unlock_tile_position = Vector2i(0, 0)
-points_to_equalise = Array[Vector2i]([])
-selected_row_or_col = Vector2i(0, 0)
-sum_of_selected_row_col = 0
-all_odd_in_selected_row_col = false
-restart_criteria = Array[ExtResource("5_412cm")]([SubResource("Resource_l2pi5"), SubResource("Resource_d2wun")])
-hack_reduction_per_restart = 2
-level_seed = 2
-tutorial = true
-
-[sub_resource type="Resource" id="Resource_utvef"]
-script = ExtResource("5_412cm")
-restart_criteria = 0
-restart_number = 3
-
-[sub_resource type="Resource" id="Resource_thp3k"]
-script = ExtResource("5_412cm")
-restart_criteria = 0
-restart_number = 3
-
-[sub_resource type="Resource" id="Resource_p5krv"]
-script = ExtResource("5_412cm")
-restart_criteria = 0
-restart_number = 3
-
-[sub_resource type="Resource" id="Resource_3c1xd"]
-script = ExtResource("5_qh4ar")
-grid_size = Vector2i(6, 6)
-counterhack_moves = 20
-goal = 2
-unlock_tile_position = Vector2i(0, 0)
-points_to_equalise = Array[Vector2i]([])
-selected_row_or_col = Vector2i(3, 0)
-sum_of_selected_row_col = 64
-all_odd_in_selected_row_col = false
-restart_criteria = Array[ExtResource("5_412cm")]([SubResource("Resource_utvef"), SubResource("Resource_thp3k"), SubResource("Resource_p5krv")])
-hack_reduction_per_restart = 0
-level_seed = 4
-tutorial = false
-
-[sub_resource type="Resource" id="Resource_552g5"]
-script = ExtResource("5_412cm")
-restart_criteria = 0
-restart_number = 3
-
-[sub_resource type="Resource" id="Resource_x5j8w"]
-script = ExtResource("5_qh4ar")
-grid_size = Vector2i(7, 7)
-counterhack_moves = 20
-goal = 1
-unlock_tile_position = Vector2i(0, 0)
-points_to_equalise = Array[Vector2i]([Vector2i(0, 0), Vector2i(2, 4)])
-selected_row_or_col = Vector2i(0, 0)
-sum_of_selected_row_col = 0
-all_odd_in_selected_row_col = false
-restart_criteria = Array[ExtResource("5_412cm")]([SubResource("Resource_552g5")])
-hack_reduction_per_restart = 0
-level_seed = 0
-tutorial = false
-
-[sub_resource type="Resource" id="Resource_sycaf"]
-script = ExtResource("5_412cm")
-restart_criteria = 2
-restart_number = 3
-
-[sub_resource type="Resource" id="Resource_fr7by"]
-script = ExtResource("5_qh4ar")
-grid_size = Vector2i(9, 9)
-counterhack_moves = 25
-goal = 3
-unlock_tile_position = Vector2i(0, 0)
-points_to_equalise = Array[Vector2i]([])
-selected_row_or_col = Vector2i(2, 0)
-sum_of_selected_row_col = 0
-all_odd_in_selected_row_col = true
-restart_criteria = Array[ExtResource("5_412cm")]([SubResource("Resource_sycaf")])
-hack_reduction_per_restart = 0
-level_seed = 25
-tutorial = false
+[ext_resource type="Script" uid="uid://dsdn3u8p0sk48" path="res://scripts/CounterhackBar.gd" id="2_7r33w"]
+[ext_resource type="Script" uid="uid://c7us5jdggmjfc" path="res://scripts/SelectOperation.gd" id="2_pu54o"]
+[ext_resource type="Resource" uid="uid://bo8ua1mdxes8p" path="res://resources/levels/Tutorial.tres" id="3_fq36e"]
+[ext_resource type="Resource" uid="uid://buchie2kvl4go" path="res://resources/levels/Level1_RowColSumMed.tres" id="4_0hvpf"]
+[ext_resource type="Script" uid="uid://i2jh0nbjlkyp" path="res://resources/LevelResource.gd" id="5_qh4ar"]
+[ext_resource type="Resource" uid="uid://ebdm8mxctdn7" path="res://resources/levels/Level2_MakePointsEqualHard.tres" id="5_tpjcj"]
+[ext_resource type="Resource" uid="uid://byu3ev62an4em" path="res://resources/levels/Level3_AllOddAllEvenEasy.tres" id="6_1o5ha"]
+[ext_resource type="Script" uid="uid://ctc7swfkd8pg3" path="res://scripts/GoalText.gd" id="6_m3unn"]
+[ext_resource type="Resource" uid="uid://ddfbs605xxpg6" path="res://resources/levels/Level4_UnlockTileMed.tres" id="7_o5lcl"]
+[ext_resource type="Script" uid="uid://dvjvs0vfsjrve" path="res://scripts/RestartController.gd" id="8_gdu34"]
+[ext_resource type="Resource" uid="uid://ba55iyr1lxuwc" path="res://resources/levels/Level5_MakePointsEqualMed.tres" id="8_opqd1"]
+[ext_resource type="Resource" uid="uid://fhbpq84ii6f" path="res://resources/levels/Level6_AllOddAllEvenHard.tres" id="9_xyj84"]
+[ext_resource type="Resource" uid="uid://c561sehgoq2sq" path="res://resources/levels/Level7_RowColSumEasy.tres" id="10_gips2"]
+[ext_resource type="Script" uid="uid://cy3e2utthqj30" path="res://scripts/RestartButton.gd" id="10_x6nri"]
+[ext_resource type="Resource" uid="uid://58fhcvg83y3c" path="res://resources/levels/Level8_UnlockTileMed.tres" id="11_wsd7d"]
+[ext_resource type="Resource" uid="uid://br71hv2nmhyoi" path="res://resources/levels/Level9_AllOddAllEvenHard.tres" id="12_iw3v5"]
+[ext_resource type="Resource" uid="uid://c7blhx6elp3fr" path="res://resources/levels/Level10_MakePointsEqualHard.tres" id="13_40jy2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruvwy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wajtx"]
 bg_color = Color(0.692131, 0.0979061, 0.198748, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1efj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vro3s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjedo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ujksx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6w2yj"]
 
 [node name="Root" type="Control" node_paths=PackedStringArray("generate_grid")]
 layout_mode = 3
@@ -120,7 +45,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mirpc")
-levels = Array[ExtResource("5_qh4ar")]([SubResource("Resource_t7ttq"), SubResource("Resource_3c1xd"), SubResource("Resource_x5j8w"), SubResource("Resource_fr7by"), null])
+levels = Array[ExtResource("5_qh4ar")]([ExtResource("3_fq36e"), ExtResource("4_0hvpf"), ExtResource("5_tpjcj"), ExtResource("6_1o5ha"), ExtResource("7_o5lcl"), ExtResource("10_gips2"), ExtResource("9_xyj84"), ExtResource("8_opqd1"), ExtResource("11_wsd7d"), ExtResource("12_iw3v5"), ExtResource("13_40jy2")])
 generate_grid = NodePath("Background/MarginContainer/HBoxContainer/Content/GridContainer")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -155,11 +80,11 @@ layout_mode = 2
 [node name="CounterhackTitle" type="Label" parent="Background/MarginContainer/HBoxContainer/Content"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_5gekr")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "Antivirus Counterhack Progress"
 
 [node name="CounterhackProgress" type="ProgressBar" parent="Background/MarginContainer/HBoxContainer/Content" node_paths=PackedStringArray("moves_label")]
-custom_minimum_size = Vector2(0, 25.575)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_ruvwy")
@@ -182,6 +107,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_5gekr")
+theme_override_font_sizes/font_size = 24
 text = "n moves"
 horizontal_alignment = 1
 
@@ -200,6 +126,7 @@ size_flags_horizontal = 8
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_5gekr")
 theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
 text = "Goal: Beat the snuphalupagus"
 fit_content = true
 script = ExtResource("6_m3unn")
@@ -235,6 +162,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_5gekr")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y1efj")
 text = " RESTART"
 script = ExtResource("10_x6nri")
 
@@ -269,6 +197,8 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_5gekr")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vro3s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vjedo")
 text = "ADD"
 
 [node name="Sub" type="Button" parent="Background/MarginContainer/HBoxContainer/Sidebar/Operations"]
@@ -276,4 +206,6 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_5gekr")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ujksx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6w2yj")
 text = "SUB"

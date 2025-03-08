@@ -102,13 +102,13 @@ func set_special_feature(feature: GoalSpecialFeature, font_size_mod: float):
 func get_special_feature_tooltip() -> String:
     match special_feature:
         GoalSpecialFeature.LockedTile:
-            return "󰌾 Locked Tile (set to 0)"
+            return "󰌾 Locked Tile"
         GoalSpecialFeature.Checksum:
-            return "  Checksum Tile (make row/col sum to n)"
+            return "  Checksum Tile"
         GoalSpecialFeature.DataCorruption:
-            return "󱔼  Data Corruption Tile (made odd or even)"
+            return "󱔼  Data Corruption Tile"
         GoalSpecialFeature.PointEqualisation:
-            return "󰫤 Parity Tile (make equal to other parity tiles)"
+            return "󰫤 Parity Tile"
     return ""
 
 
